@@ -1,19 +1,21 @@
-
-import './App.css';
-import { AppContainer } from './styles';
-import { Column } from './components/Column';
-import { AddNewItem } from './components/AddNewItem';
-import { useAppState } from './AppStateContext';
+import "./App.css";
+import { AppContainer } from "./styles";
+import { Column } from "./components/Column";
+import { AddNewItem } from "./components/AddNewItem";
+import { useAppState } from "./AppStateContext";
 
 function App() {
-  const {state} = useAppState()
+  const { state, dispatch } = useAppState();
   return (
-  <AppContainer>
-    {state.lists.map((list,i) =>(
-      <Column text={list.text} key={list.id} index={i} />
-    ))}
-    <AddNewItem toggleButtonText='+ Add another list' onAdd={console.log}/>
-  </AppContainer>
+    <AppContainer>
+      {state.lists.map((list, i) => (
+        <Column id={list.id} text={list.text} key={list.id} index={i} />
+      ))}
+      <AddNewItem
+        toggleButtonText="+ Add nouvelle liste"
+        onAdd={(text) => dispatch({ type: "ADD_LIST", payload: text })}
+      />
+    </AppContainer>
   );
 }
 
