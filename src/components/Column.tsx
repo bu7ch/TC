@@ -1,4 +1,3 @@
-import React from "react";
 import { useAppState } from "../AppStateContext";
 import { ColumnContainer, ColumnTitle } from "../styles";
 import { AddNewItem } from "./AddNewItem";
