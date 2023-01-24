@@ -5,7 +5,9 @@ const appData: AppState = {
     {
       id: "0",
       text: "To Do",
-      tasks: [{ id: "c0", text: "Learn Typescript" }],
+      tasks: [
+        // { id: "c0", text: "Learn Typescript" }
+      ],
     },
     {
       id: "1",

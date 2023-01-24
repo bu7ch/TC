@@ -2,7 +2,6 @@
 import './App.css';
 import { AppContainer } from './styles';
 import { Column } from './components/Column';
-import { Card } from './components/Card';
 import { AddNewItem } from './components/AddNewItem';
 import { useAppState } from './AppStateContext';
 
@@ -11,7 +10,7 @@ function App() {
   return (
   <AppContainer>
     {state.lists.map((list,i) =>(
-      <Column text={list.text} key={list.id} />
+      <Column text={list.text} key={list.id} index={i} />
     ))}
     <AddNewItem toggleButtonText='+ Add another list' onAdd={console.log}/>
   </AppContainer>
